@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/soft/gradle-4.8.1-all" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/shop-cart" />
+            <option value="$PROJECT_DIR$/shop-cms" />
+            <option value="$PROJECT_DIR$/shop-common" />
+            <option value="$PROJECT_DIR$/shop-eureka" />
+            <option value="$PROJECT_DIR$/shop-item" />
+            <option value="$PROJECT_DIR$/shop-mapper" />
+            <option value="$PROJECT_DIR$/shop-mgt" />
+            <option value="$PROJECT_DIR$/shop-notify" />
+            <option value="$PROJECT_DIR$/shop-order" />
+            <option value="$PROJECT_DIR$/shop-pojo" />
+            <option value="$PROJECT_DIR$/shop-portal" />
+            <option value="$PROJECT_DIR$/shop-search" />
+            <option value="$PROJECT_DIR$/shop-sso" />
+            <option value="$PROJECT_DIR$/shop-zuul" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

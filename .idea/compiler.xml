@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shop-cart_main" target="1.8" />
+      <module name="shop-cart_test" target="1.8" />
+      <module name="shop-cms_main" target="1.8" />
+      <module name="shop-cms_test" target="1.8" />
+      <module name="shop-common_main" target="1.8" />
+      <module name="shop-common_test" target="1.8" />
+      <module name="shop-eureka_main" target="1.8" />
+      <module name="shop-eureka_test" target="1.8" />
+      <module name="shop-item_main" target="1.8" />
+      <module name="shop-item_test" target="1.8" />
+      <module name="shop-mapper_main" target="1.8" />
+      <module name="shop-mapper_test" target="1.8" />
+      <module name="shop-mgt_main" target="1.8" />
+      <module name="shop-mgt_test" target="1.8" />
+      <module name="shop-notify_main" target="1.8" />
+      <module name="shop-notify_test" target="1.8" />
+      <module name="shop-order_main" target="1.8" />
+      <module name="shop-order_test" target="1.8" />
+      <module name="shop-pojo_main" target="1.8" />
+      <module name="shop-pojo_test" target="1.8" />
+      <module name="shop-portal_main" target="1.8" />
+      <module name="shop-portal_test" target="1.8" />
+      <module name="shop-search_main" target="1.8" />
+      <module name="shop-search_test" target="1.8" />
+      <module name="shop-sso_main" target="1.8" />
+      <module name="shop-sso_test" target="1.8" />
+      <module name="shop-zuul_main" target="1.8" />
+      <module name="shop-zuul_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
