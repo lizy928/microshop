@@ -104,6 +104,7 @@ project("shop-eureka") {
         compile("org.springframework.cloud:spring-cloud-starter-eureka-server:1.2.3.RELEASE")
         compile("com.github.danielwegener:logback-kafka-appender:${logbackkafkaVersion}")
         compile("javax.servlet:javax.servlet-api:${servletapiVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -113,6 +114,7 @@ project("shop-zuul") {
     dependencies {
         compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${eurekaServerVersion}")
         compile("org.springframework.cloud:spring-cloud-starter-zuul:${zuulVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -176,6 +178,8 @@ project("shop-portal") {
         compile("com.ctrip.framework.apollo:apollo-client:${apolloclientVersion}")
 //        compile("org.springframework.data:spring-data-redis") //暂时不使用
         //compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+
     }
 }
 
@@ -195,6 +199,7 @@ project("shop-item") {
 //        compile("org.springframework.data:spring-data-redis") //暂时不使用
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.freemarker:freemarker:2.3.9")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -212,6 +217,7 @@ project("shop-search") {
         compile("org.springframework.cloud:spring-cloud-starter-bus-amqp:${amapVersion}")
         compile("com.ctrip.framework.apollo:apollo-client:${apolloclientVersion}")
         compile("org.springframework.data:spring-data-solr:${solrVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -234,6 +240,7 @@ project("shop-cart") {
         compile("com.ctrip.framework.apollo:apollo-client:${apolloclientVersion}")
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.freemarker:freemarker:2.3.9")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -252,6 +259,7 @@ project("shop-notify") {
         compile("com.ctrip.framework.apollo:apollo-client:${apolloclientVersion}")
 //        compile("org.springframework.data:spring-data-redis") //暂时不使用
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -276,6 +284,7 @@ project("shop-sso") {
         compile("com.ctrip.framework.apollo:apollo-client:${apolloclientVersion}")
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.freemarker:freemarker:2.3.9")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -303,6 +312,7 @@ project("shop-order") {
         compile("org.springframework.retry:spring-retry")
         compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.freemarker:freemarker:2.3.9")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -311,6 +321,7 @@ project("shop-mgt") {
     dependencies {
         compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
@@ -322,6 +333,7 @@ project("shop-cms") {
         compile(project(":shop-pojo"))
         compile(project(":shop-mapper"))
         compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+        compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     }
 }
 
