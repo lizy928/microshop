@@ -176,8 +176,8 @@ project("shop-portal") {
         compile("org.springframework.cloud:spring-cloud-starter-hystrix:${hystrixVersion}")
         compile("org.springframework.cloud:spring-cloud-starter-bus-amqp:${amapVersion}")
         compile("com.ctrip.framework.apollo:apollo-client:${apolloclientVersion}")
-//        compile("org.springframework.data:spring-data-redis") //暂时不使用
-        //compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
+      //compile("org.springframework.data:spring-data-redis") //暂时不使用
+      //compile("org.springframework.boot:spring-boot-starter-redis:${springBootRedisVersion}")
         compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 
     }
