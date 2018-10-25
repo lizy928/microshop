@@ -318,7 +318,11 @@ project("shop-order") {
 
 project("shop-mgt") {
     description = "shop-mgt"
+
     dependencies {
+        compile(project(":shop-mapper"))
+        compile(project(":shop-common"))
+        compile(project(":shop-pojo"))
         compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
