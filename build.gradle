@@ -45,7 +45,7 @@ configure(allprojects) { project ->
 
         mysqlVersion                = "5.1.32"
         springBootMyBatisVersion    = '1.2.0'
-        springBootpagehelperVersion = '1.1.0'
+        springBootpagehelperVersion = '1.2.3'
         springBootDruidVersion      = '1.1.10'
         springBootActuatorVersion   = '2.0.6.RELEASE'
 
@@ -122,7 +122,7 @@ project("shop-common") {
     description = "shop-common"
 
     dependencies {
-        compileOnly("javax.servlet:javax.servlet-api:${servletapiVersion}")
+        //compileOnly("javax.servlet:javax.servlet-api:${servletapiVersion}")
         compileOnly("redis.clients:jedis:${jedisVersion}")
         compile("org.apache.commons:commons-lang3:${commonslang3Version}")
         compile("commons-lang:commons-lang:${commonslangVersion}")
@@ -326,6 +326,9 @@ project("shop-mgt") {
         compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+        compile("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+        compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
+
     }
 }
 

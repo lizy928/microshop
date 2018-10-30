@@ -1,12 +1,56 @@
 server:
   port: 8080
-  
-  
+
+
+#系统配置
+spring:
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    check-template-location: true
+    mode: LEGACYHTML5
+    #配置静态资源
+    resources:
+      static-locations: classpath:static/,classpath:templates/
+    servlet:
+      content-type: text/html
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+  datasource:
+    url: jdbc:mysql://47.107.92.79:3306/htht?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: htht
+    password: "Htht123."
+    password_encrypted: "true"
+    driverClassName: com.mysql.jdbc.Driver
+    maxActive: 30
+    minIdle : 10
+    maxWait: 1000
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    keepAlive: true
+    minEvictableIdleTimeMillis: 60000
+    validationQuery: "SELECT 'x'"
+    testWhileIdle: true
+    filters: "stat"
+
+  mvc:
+   view:
+    prefix: classpath:templates/
+    suffix: .html
+
+
 druid:
     url: jdbc:mysql://47.107.92.79:3306/microshop?characterEncoding=utf-8
     driver-class: com.mysql.jdbc.Driver
-    username: root
-    password: Root123.
+    username: microshop
+    password: Microshop123.
     initial-size: 1
     min-idle: 1
     max-active: 20
@@ -34,6 +78,20 @@ druid:
 mybatis:
     type-aliases-package: com.shop.pojo
     mapper-locations: classpath:mapper/*.xml
+
+#pagehelper插件信息
+pagehelper:
+  auto-dialect: mysql
+  offset-as-page-num: true
+  row-bounds-with-count: true
+  page-size-zero: true
+  reasonable: false
+  params: pageNum=pageHelperStart;pageSize=pageHelperRows;
+  support-methods-arguments: false
+
+
+
+
 
 
 #pagehelper:
