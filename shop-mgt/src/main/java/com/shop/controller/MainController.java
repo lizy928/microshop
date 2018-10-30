@@ -2,9 +2,11 @@ package com.shop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.awt.print.Paper;
 import java.util.Objects;
 
 /**
@@ -35,5 +37,10 @@ public class MainController {
     @RequestMapping("listProduct")
     public Object listProduct(){
         return "Products_List";
+    }
+
+    @RequestMapping("/{page}")
+    public String page(@PathVariable String page){
+        return page;
     }
 }

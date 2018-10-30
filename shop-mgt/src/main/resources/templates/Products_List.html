@@ -438,33 +438,36 @@ $('.Order_form').on('click', function(){
     parent.layer.close(index);
 	
 });
-$.ajax({
-    url: "/product/listProduct",
-    type: "post",
-    data: {userName:$("#username").val(), passWord:$("#userpwd").val()},
-    dataType: "json",
-    success: function(msg) {
-        if(msg.code === 1){
-            layer.alert('查询！',{
-                title: '提示框',
-                icon:1,
-            });
-            location.href="/";
+
+$(document).ready(function(){
+    $.ajax({
+        url: "/product/listProduct",
+        type: "post",
+        data: {userName:$("#username").val(), passWord:$("#userpwd").val()},
+        dataType: "json",
+        success: function(msg) {
+            if(msg.code === 1){
+                layer.alert('查询！',{
+                    title: '提示框',
+                    icon:1,
+                });
+                location.href="/";
+                layer.close(index);
+                layer.alert('查询失败！',{
+                    title: '提示框',
+                    icon:2,
+                });
+            }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            //location.href="index.html";
             layer.close(index);
             layer.alert('查询失败！',{
-                title: '提示框',
+                title: '错误',
                 icon:2,
             });
         }
-    },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
-        //location.href="index.html";
-        layer.close(index);
-        layer.alert('查询失败！',{
-            title: '错误',
-            icon:2,
-        });
-    }
-});
+    });
 
+})
 </script>

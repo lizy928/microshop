@@ -1,7 +1,12 @@
 package com.shop;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.shop.dao.ItemMapper;
 import com.shop.dao.UserMapper;
+import com.shop.po.ItemExample;
 import com.shop.po.UserExample;
+import com.shop.pojo.Item;
 import com.shop.pojo.User;
 import com.shop.utils.MD5Util;
 import org.junit.Test;
@@ -24,6 +29,9 @@ public class TestMgtApplication {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private ItemMapper itemMapper;
 
     @Test
     public void test(){
@@ -48,5 +56,17 @@ public class TestMgtApplication {
         criteria.andPasswordEqualTo(passd);
         List<User> users = userMapper.selectByExample(userExample);
         System.out.println(users);
+    }
+
+    @Test
+    public void testPageHelper(){
+        ItemExample itemExample = new ItemExample();
+        PageHelper.startPage(1,10);
+        List<Item> itemList = itemMapper.selectByExample(itemExample);
+        System.out.println(itemList);
+        PageInfo<Item> pageInfo = new PageInfo<>(itemList);
+        long total  = pageInfo.getTotal();
+        System.out.println(total);
+
     }
 }
