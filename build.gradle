@@ -320,9 +320,12 @@ project("shop-mgt") {
     description = "shop-mgt"
 
     dependencies {
-        compile(project(":shop-mapper"))
         compile(project(":shop-common"))
         compile(project(":shop-pojo"))
+        compile("mysql:mysql-connector-java:${mysqlVersion}")
+        compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${springBootMyBatisVersion}")
+        compile("com.github.pagehelper:pagehelper-spring-boot-starter:${springBootpagehelperVersion}")
+        compile("com.alibaba:druid-spring-boot-starter:${springBootDruidVersion}")
         compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
         compile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
