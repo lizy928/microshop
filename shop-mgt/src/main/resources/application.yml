@@ -1,7 +1,6 @@
 server:
   port: 8080
 
-
 #系统配置
 spring:
   thymeleaf:
