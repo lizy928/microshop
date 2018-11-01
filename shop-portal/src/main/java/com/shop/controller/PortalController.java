@@ -1,5 +1,7 @@
 package com.shop.controller;
 
+import com.shop.service.ItemCatService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,10 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("portal")
 public class PortalController {
 
+    @Autowired
+    private ItemCatService itemCatService;
+
     @RequestMapping("getSortMenuList")
     public Object getSortMenuList(){
 
-        return null;
+        return itemCatService.getSortMenuList();
     }
 
 
