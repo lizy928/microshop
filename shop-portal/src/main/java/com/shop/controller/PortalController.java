@@ -1,5 +1,6 @@
 package com.shop.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.shop.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,6 @@ public class PortalController {
 
     @RequestMapping("getSortMenuList")
     public Object getSortMenuList(){
-
         return itemCatService.getSortMenuList();
     }
 

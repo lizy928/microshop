@@ -2,9 +2,9 @@ package com.shop.service.impl;
 
 import com.shop.dao.ItemCatDao;
 import com.shop.pojo.CatNode;
-import com.shop.pojo.CatResult;
 import com.shop.pojo.ItemCat;
 import com.shop.service.ItemCatService;
+import com.shop.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +24,60 @@ public class ItemServiceImpl implements ItemCatService {
 
     @Override
     public Object getSortMenuList() {
-        CatResult catResult = new CatResult();
         //查询分类列表
-        catResult.setData(getCatList(0));
-        return catResult;
+        //catResult.setData(getCatList(0));
+        //return catResult;
+        List<ItemCat> list = itemCatDao.itemCatList();
+        //一级目录数据
+       // List<ItemCat> itemCatParentList = list.stream().filter(e -> e.getParentId() == 0).sorted(Comparator.comparing(ItemCat::getId)).collect(Collectors.toList());
+
+        List<ItemCat> rootList = new ArrayList<>();
+        List<ItemCat> nextList = new ArrayList<>();
+        List<ItemCat> childList = new ArrayList<>();
+
+        list.forEach( e -> {
+            if(e.getIsParent()){
+                if(e.getParentId() == 0){
+                    rootList.add(e);
+                }else {
+                    nextList.add(e);
+                }
+            }else {
+                childList.add(e);
+            }
+        });
+        List<ItemCat> parentList = new ArrayList<>();
+        if(rootList.size() > 14){
+            parentList = rootList.subList(0,14);
+        }
+        List<CatNode> catNodes = new ArrayList<>();
+        parentList.forEach( parentNode -> {
+            CatNode catNode = new CatNode();
+            List<CatNode> parentItem = new ArrayList<>();
+            catNode.setName(parentNode.getName());
+            catNode.setUrl("/getItemByCat?itemCatId="+parentNode.getId());
+            nextList.forEach( next ->{
+                if(parentNode.getId() == next.getParentId()){
+                    CatNode nextNode = new CatNode();
+                    nextNode.setName(next.getName());
+                    nextNode.setUrl("/getItemByCat?itemCatId="+next.getId());
+                    List<String> childItem = new ArrayList<>();
+                    childList.forEach( child -> {
+                        if(next.getId() == child.getParentId()){
+                            childItem.add("/getItemByCat?itemCatId="+child.getId());
+                        }
+                    });
+                    nextNode.setItem(childItem);
+                    parentItem.add(nextNode);
+                }
+            });
+            catNode.setItem(parentItem);
+            catNodes.add(catNode);
+        });
+        return JsonUtils.toJson(catNodes);
     }
+
+
 
     private List<?> getCatList(long parentId) {
         List<ItemCat> list = itemCatDao.itemCatList();//返回值list

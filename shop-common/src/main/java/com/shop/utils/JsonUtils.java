@@ -1,7 +1,11 @@
 package com.shop.utils;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created By Lizhengyuan on 18-10-30
@@ -17,6 +21,14 @@ public class JsonUtils {
             map.put(String.valueOf(args[i]),(T)args[i+1]);
         }
         return map;
+    }
+
+    public static Object toJson(Object obj){
+        if(Objects.isNull(obj)){
+            return null;
+        }else {
+            return JSON.toJSON(obj);
+        }
     }
 
 }
